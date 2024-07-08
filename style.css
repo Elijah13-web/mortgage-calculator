@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+  --Lime: hsl(61, 70%, 52%);
+  --Red: hsl(4, 69%, 50%);
+  --White: hsl(0, 0%, 100%);
+  --Slate-100: hsl(202, 86%, 94%);
+  --Slate-300: hsl(203, 41%, 72%);
+  --Slate-500: hsl(200, 26%, 54%);
+  --Slate-700: hsl(200, 24%, 40%);
+  --Slate-800: hsl(202, 55%, 16%);
+  --Slate-900: hsla(240, 49%, 10%, 0.679);
+  --font-lg: 3.5rem ;
+  --font-md: 2.3rem ;
+  --font-normal: 1.5rem ;
+  --font-sm: 1rem ;
+  --fw-500: 500;
+  --fw-700: 700;
+  --font-family: "Plus Jakarta Sans", Sans-serif; ;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--Slate-100);
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+main{
+    width: 70%;
+    height: 540px;
+    margin:  0 auto;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+}
+.right, .left{
+    min-width: 50%;
+    height: 100%;
+}
+.left{
+    /* background-color: rgb(182, 164, 199); */
+}
+
+.left-inner{
+    /* background-color: aqua; */
+    padding: 10px;
+}
+
+.left-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-heading span{
+    text-decoration: underline;
+}
+
+.right{
+    background-color: var(--Slate-800);
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right-inner{
+    width: 100%;
+    max-height: 70%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    display: none;
+}
+.right-content, .right-result-container{
+    padding: 0 5%;
+}
+
+.right p{
+    color: var(--Slate-100);
+}
+.right h4, .right h3{
+    color: var(--White);
+}
+
+/* right-result */
+.right-result-container{
+    padding-bottom: 10%;
+
+}
+.right-result-container h1{
+    color: var(--Lime);
+}   
+.result-board{
+    background-color: var(--Slate-900);
+    padding: 15px;
+    border-radius: 15px;
+}
+.result-total{
+    border-bottom: 1px solid var(--Slate-100);
+}
+/* form */
+form{
+
+}
+.form-group{
+    padding: 1rem 0;
+}
+.form-inner, .form-radio{
+    border-radius: 5px;
+}
+.form-inner, .form-radio{
+    display: flex;
+    width: 100%;
+    border: 1px solid var(--Slate-300);
+}
+.form-inner input{
+    width: 90%;
+    padding: 10px 8px;
+}
+.form-inner input, .form-inner :input:focus, input::after, input::before,.form-radio input{
+    box-shadow: none;
+    border: none;
+    outline: none;
+}
+.form-inner span{
+    width: 10%;
+    background-color: var(--Slate-300);
+}
+.form-group2{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.form-group.two{
+    width: 45%;
+}
+ .form-group.two span{
+font-weight: 900;
+color: var(--Slate-900);
+ }
+.form-inner.first input{
+    width: 60%;
+}
+.form-inner.first span{
+    width: 40%;
+}   
+.form-inner.second span{
+    width: 20%;
+}
+
+/* mortgage type*/
+.mortgage-type{
+    margin-top: 0.5rem;
+}
+.form-group.radio{
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.form-radio{
+    background-color: var(--White);
+    padding: 5px 0;
+    margin-top: 1rem;
+}
+
+.form-radio:hover{
+    background-color: #d6bc2b3c;
+    outline: 1px solid var(--Slate-900);
+}
+input[type="checkbox"], input[typpe="radio"]{
+    accent-color: var(--Lime);
+}
+.dd{
+    padding: 0 10px;
+}
+button{
+    padding:10px 0;
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    background-color: var(--Lime);
+    border: none;
+    margin-top: 1rem 0;
+}
+
+/* Medium */
+
+/* Mobile */
+@media (max-width: 900px) {
+    body{
+        align-items: flex-start;
+    }
+    main{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .left, .right {
+        min-width: 100%;
+        /* font-weight: 800%; */
+    }
+    .right{
+        border-radius: 0;
+    }
+}
