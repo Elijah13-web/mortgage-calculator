@@ -2,6 +2,7 @@
 
 :root {
   --Lime: hsl(61, 70%, 52%);
+  --Lime2: #d7da2fa6;
   --Red: hsl(4, 69%, 50%);
   --White: hsl(0, 0%, 100%);
   --Slate-100: hsl(202, 86%, 94%);
@@ -9,7 +10,7 @@
   --Slate-500: hsl(200, 26%, 54%);
   --Slate-700: hsl(200, 24%, 40%);
   --Slate-800: hsl(202, 55%, 16%);
-  --Slate-900: hsla(240, 49%, 10%, 0.679);
+  --Slate-900: hsla(240, 69%, 5%, 0.679);
   --font-lg: 3.5rem ;
   --font-md: 2.3rem ;
   --font-normal: 1.5rem ;
@@ -32,7 +33,7 @@ body {
   }
 main{
     width: 70%;
-    height: 540px;
+    height: 560px;
     margin:  0 auto;
     background-color: white;
     border-radius: 15px;
@@ -47,8 +48,7 @@ main{
 }
 
 .left-inner{
-    /* background-color: aqua; */
-    padding: 10px;
+    padding: 15px;
 }
 
 .left-heading{
@@ -57,8 +57,9 @@ main{
     align-items: center;
 }
 
-.left-heading span{
+.left-heading a{
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .right{
@@ -78,7 +79,6 @@ main{
     flex-direction: column;
     align-items: center;
     text-align: center;
-    display: none;
 }
 .right-content, .right-result-container{
     padding: 0 5%;
@@ -94,7 +94,7 @@ main{
 /* right-result */
 .right-result-container{
     padding-bottom: 10%;
-
+    display: none;
 }
 .right-result-container h1{
     color: var(--Lime);
@@ -103,18 +103,20 @@ main{
     background-color: var(--Slate-900);
     padding: 15px;
     border-radius: 15px;
+    border-top: 3px solid var(--Lime);
 }
 .result-total{
     border-bottom: 1px solid var(--Slate-100);
 }
+
 /* form */
 form{
 
 }
 .form-group{
-    padding: 1rem 0;
+    padding: .5rem 5px;
 }
-.form-inner, .form-radio{
+.form-inner, .form-radio, input[type="text"]{
     border-radius: 5px;
 }
 .form-inner, .form-radio{
@@ -122,11 +124,22 @@ form{
     width: 100%;
     border: 1px solid var(--Slate-300);
 }
+input[type="text"]:hover{
+    cursor: pointer !important;
+}
+.form-inner:hover{
+    border: 1px solid var(--Slate-800);
+}
+.form-radio:hover{
+    border: 1px solid var(--Lime);
+    cursor: pointer !important;
+}
 .form-inner input{
     width: 90%;
     padding: 10px 8px;
+
 }
-.form-inner input, .form-inner :input:focus, input::after, input::before,.form-radio input{
+.form-inner input, .form-inner input:focus, input::after, input::before, .form-radio input{
     box-shadow: none;
     border: none;
     outline: none;
@@ -134,6 +147,9 @@ form{
 .form-inner span{
     width: 10%;
     background-color: var(--Slate-300);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .form-group2{
     width: 100%;
@@ -143,47 +159,49 @@ form{
 .form-group.two{
     width: 45%;
 }
- .form-group.two span{
-font-weight: 900;
-color: var(--Slate-900);
- }
+.form-group.two span{
+    font-weight: 900;
+    color: var(--Slate-900);
+}
 .form-inner.first input{
     width: 60%;
 }
 .form-inner.first span{
     width: 40%;
-}   
+}  
 .form-inner.second span{
     width: 20%;
-}
+} 
 
 /* mortgage type*/
 .mortgage-type{
-    margin-top: 0.5rem;
+    margin-top: .5rem;
 }
 .form-group.radio{
-    padding-top: 0;
     margin-top: 0;
+    padding-top: 0;
 }
-
 .form-radio{
     background-color: var(--White);
-    padding: 5px 0;
+    padding: 10px 0;
     margin-top: 1rem;
 }
-
-.form-radio:hover{
+/* .radio{
     background-color: #d6bc2b3c;
-    outline: 1px solid var(--Slate-900);
-}
-input[type="checkbox"], input[typpe="radio"]{
+    outline: 1px solid var(--Slate-900); 
+} */
+input[type="checkbox"], input[type="radio"]{
+    /* appearance: none; */
     accent-color: var(--Lime);
 }
+
+
 .dd{
     padding: 0 10px;
-}
+} 
+
 button{
-    padding:10px 0;
+    padding: 10px 0;
     min-width: 50%;
     display: flex;
     justify-content: center;
@@ -191,10 +209,31 @@ button{
     border-radius: 25px;
     background-color: var(--Lime);
     border: none;
-    margin-top: 1rem 0;
+    margin: 1rem 0;
+}
+button:hover{
+    background-color: var(--Lime2);
+    cursor: pointer;
+}
+/* special css class */
+.form-inner.error{
+    border: 1px solid var(--Red) !important;
+}
+.form-inner.error span{
+    background-color: var(--Red);
+    color: white;
 }
 
-/* Medium */
+.form-inner small{
+    visibility: hidden;
+
+}
+.form-inner.error small{
+    visibility: visible;
+}
+small{
+    color: var(--Red);
+}
 
 /* Mobile */
 @media (max-width: 900px) {
@@ -207,7 +246,6 @@ button{
     }
     .left, .right {
         min-width: 100%;
-        /* font-weight: 800%; */
     }
     .right{
         border-radius: 0;
