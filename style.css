@@ -172,6 +172,11 @@ input[type="text"]:hover{
 .form-inner.second span{
     width: 20%;
 } 
+.checked{
+    background-color:#d6bc2b3c !important;
+    outline: 1px solid var(--Lime) !important;
+}
+
 
 /* mortgage type*/
 .mortgage-type{
